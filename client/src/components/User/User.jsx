@@ -2,6 +2,10 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUsers, getUsers2 } from "../../redux/actions/user";
 import s from "./User.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faUse } from '@fortawesome/free-solid-svg-icons'
+import {faUser} from '@fortawesome/free-regular-svg-icons'
+import {faYoutube} from '@fortawesome/free-brands-svg-icons'
 const User = () => {
   const dispatch = useDispatch();
   const user1Handler = () => {
@@ -15,6 +19,9 @@ const User = () => {
   const user2 = useSelector((state) => state.user2.users2);
   return (
     <div>
+      <FontAwesomeIcon icon={faYoutube} />
+      <FontAwesomeIcon icon={faCoffee} />
+      <FontAwesomeIcon icon={faUser} />
       <div>User</div>
 
       <button onClick={user1Handler}>GETUSERS1</button>
