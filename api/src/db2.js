@@ -7,19 +7,12 @@ const user = require("./models/User");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME} = process.env;
 
 const sequelize = new Sequelize(
-  `mssql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
   {
-    dialect: 'mssql',
-    dialectOptions: {
-      options: {
-        encrypt: false, // Cambia a 'true' si tu servidor SQL Server requiere conexión segura (SSL/TLS)
-      },
-    },
-    logging: false, // establece a console.log para ver las consultas SQL en bruto
+    logging: false, // set to console.log to see the raw SQL queries
+    native: false, // lets Sequelize know we can use pg-native for ~30% more speed
   }
 );
-
-
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
