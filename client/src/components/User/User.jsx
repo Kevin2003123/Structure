@@ -25,20 +25,20 @@ const User = () => {
 
     
 
-      <div className={`flex ${s.border} w-100`}>
-        <div className="flex flex-col w-2/4">
+      <div className={`d-flex ${s.border} w-100`}>
+        <div className="d-flex flex-column w-50">
           {user1?.map((user, index) => (
-            <div key={index} className="bg-blue-300">
-              <div className="flex">
+            <div key={index} className="bg-primary">
+              <div className="d-flex">
                 <label>{"ID: "}</label>
                 <div>{user.id}</div>
               </div>
-              <div className="flex">
+              <div className="d-flex ">
                 {" "}
                 <label>{"Name: "}</label>
                 <div>{user.name}</div>
               </div>
-              <div className="flex">
+              <div className="d-flex">
                 <label>{"IsAdmin: "}</label>
                 <div>{user.isAdmin ? "true" : "false"}</div>
               </div>
@@ -46,19 +46,19 @@ const User = () => {
           ))}
         </div>
 
-        <div className="flex flex-col w-2/4">
+        <div className="d-flex flex-column w-50">
           {user2?.map((user, index) => (
             <div key={index} className="bg-red-700">
-              <div className="flex">
+              <div className="d-flex">
                 <label>{"ID: "}</label>
                 <div>{user.id}</div>
               </div>
-              <div className="flex">
+              <div className="d-flex">
                 {" "}
                 <label>{"Name: "}</label>
                 <div>{user.name}</div>
               </div>
-              <div className="flex">
+              <div className="d-flex">
                 <label>{"IsAdmin: "}</label>
                 <div>{user.isAdmin ? "true" : "false"}</div>
               </div>
